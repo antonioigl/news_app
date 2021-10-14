@@ -4,6 +4,10 @@
 
 import 'dart:convert';
 
+NewsResponse newsResponseFromJson(String str) => NewsResponse.fromMap(json.decode(str));
+
+String newsResponseToJson(NewsResponse data) => json.encode(data.toJson());
+
 class NewsResponse {
   NewsResponse({
     required this.status,
