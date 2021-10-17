@@ -38,10 +38,12 @@ class NewsService with ChangeNotifier {
 
   set selectedCategory( String valor ) {
     this._selectedCategory = valor;
-    
+
     this.getArticlesByCategory(valor);
     notifyListeners();
   }
+
+  List<Article>? get getArticulosCategoriaSeleccionada => this.categoryArticles[ this.selectedCategory ];
 
   getTopHeadlines() async {
 
